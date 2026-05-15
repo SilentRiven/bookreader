@@ -1,5 +1,9 @@
 pluginManagement {
     repositories {
+        // fork: 阿里云镜像优先，国内访问更稳
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -12,9 +16,6 @@ pluginManagement {
         mavenCentral()
         //镜像仓库,无法连接源仓库自行启用镜像仓库,不要提交修改
         //maven { url "https://maven-central-asia.storage-download.googleapis.com/maven2/" }
-        //maven { url 'https://maven.aliyun.com/repository/google' }
-        //maven { url 'https://maven.aliyun.com/repository/public' }
-        //maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
         //maven { url 'https://repo.huaweicloud.com/repository/maven/' }
     }
 }
@@ -22,6 +23,9 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        // fork: 阿里云镜像优先
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
         //原仓库
         google {
             content {
@@ -40,8 +44,6 @@ dependencyResolutionManagement {
 
         //镜像仓库,无法连接源仓库自行启用镜像仓库,不要提交修改
         //maven { url "https://maven-central-asia.storage-download.googleapis.com/maven2/" }
-        //maven { url 'https://maven.aliyun.com/repository/google' }
-        //maven { url 'https://maven.aliyun.com/repository/public' }
         //maven { url 'https://repo.huaweicloud.com/repository/maven/' }
     }
 }
